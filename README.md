@@ -8,6 +8,6 @@ The project consists of:
 - A batch program to check for many published dataset attributes and score the attributes
 
 The project will go through the following milestones:
-- November 2022 - Write a document to define FAIRness and data & metadata quality. In teh same doc, state what are project goals and to obtain them.
+- November 2022 - Write a document to define FAIRness and data & metadata quality. In the same doc, state what are project goals and to obtain them.
 - December 2022 - Code a batch program to check for many published dataset attributes and score the attributes
 - January 2022 - Test & produce a list of datasets eligible for improvement
