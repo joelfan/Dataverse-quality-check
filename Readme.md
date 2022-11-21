@@ -16,13 +16,23 @@ The coding language is PHP, version 7 or superior.
 You can launch the program with a simple "php qc.php".
 All the files are with comments in English language.
 The project has the following files:
-qc.php - this is the main program.
-qc.ini - this is the configuration file.
-qc_constants.php - this is the file that contains some constants. It takes constants from qc.ini, but if you want you can take a look.
-qc_listfunctions.php - this file is the program that harvest the data. 
-qc_printfunctions.php - this file is used only to printout results. It will print a txt file and a csv file.
-qc_qualityfunctions.php - this is the core of the project. This file contains functions that check the dataset quality. 
-qc_utilfunctions.php - this is a collection of utility functions, like the logging and the CURL function.
+**qc.php** - this is the main program.
+**qc.ini** - this is the configuration file.
+**qc_constants.php** - this is the file that contains some constants. It takes constants from qc.ini, but if you want you can take a look.
+**qc_listfunctions.php** - this file is the program that harvests the data. 
+**qc_printfunctions.php** - this file is used only to printout results. It will print a txt file and a csv file.
+**qc_qualityfunctions.php** - this is the core of the project. This file contains functions that check the dataset quality. 
+**qc_utilfunctions.php** - this is a collection of utility functions, like the logging and the CURL function.
 
-## The quality check in detail
-for each dataset, the program will check:
+## The quality check
+The most important program is **qc_qualityfunctions.php**. It contains the routines to check for quality.
+For each dataset, the program performs:
+* ORGANIZATIONAL CHECK
+* COMPLETENESS CHECK
+* DATA-ACCESS CHECK
+* USER-ORIENTED CHECKS
+* PUBLISHER CHECKS
+* FILE-ORIENTED CHECKS 
+
+Each check returns a score (typically from 1 to 5).
+All the score put together will form the average score of the dataset.
