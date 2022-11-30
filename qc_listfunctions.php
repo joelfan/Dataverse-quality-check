@@ -1,6 +1,12 @@
 <?php 
 
 function getUsList() {
+
+/////////////////////////////////////////////////////////////////////////////////////
+// This function return the list of users                                          //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+
 	$start = $pageCount = 0; 
 	$perPage = PERPAGE; 
 	$u = T_URL.'admin/list-users?itemsPerPage=10000&'.T_APIK.'&'.T_UNBLOCK;
@@ -22,8 +28,13 @@ function getUsList() {
 	return($usList);
 }
 
-function getDsList() {					// Return an array of datasets
-	// This function connect to the server and get a list of all the datasets.
+function getDsList() {					
+
+/////////////////////////////////////////////////////////////////////////////////////
+// This function return the list of published dataset                              //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+
 	$start = $pageCount = 0; 
 	$perPage = PERPAGE; 
 	if (defined('MAXITEMS')) $perPage = MAXITEMS; 
@@ -51,9 +62,16 @@ function getDsList() {					// Return an array of datasets
 	return($dsList);
 }
 
-function checkDsList($dsList, $users) {				// Each dataset is checked
-	// Starting from the list produced with getDsList, this function harvests all the detailed data for each datasets.
-	// the it calls checkDs(), that is the function that checks the quality.
+function checkDsList($dsList, $users) {				
+
+/////////////////////////////////////////////////////////////////////////////////////
+// This function return the list of published dataset                              //
+// Starting from the list produced with getDsList, this function harvests          //
+// all the detailed data for each datasets	                                       //
+// then it calls checkDs(), that is the function that checks the quality           //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+
 	$outString = "";
 	foreach($dsList as $i) {
 		//$u = T_URL.'datasets/'.$i->entity_id.'?'.T_APIK;
