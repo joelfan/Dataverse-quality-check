@@ -37,12 +37,12 @@ For each dataset, the program performs:
 Each check returns a score (typically from 1 to 5).
 All the score put together will form the average score of the dataset.
 
-### Installation & run
+## Installation & run
 Nothing special, you just need PHP and php CURL library, which is standard.
 You just need to configure qc.ini, make sure you created a <pre>out</pre> folder, and then you can launch the quality check with the command:
 <pre>php qc.php</pre>
 
-### Configuration of qc.ini
+## Configuration of qc.ini
 You just need to set some parameters before running the program. 
 The following applies:
 * Scoring votes:
@@ -55,7 +55,7 @@ HIGHVOTE = 4
 MEGAVOTE = 5
 </pre>
 
-# output files
+* output files
 Provide a path and file for each file, or leave them like these but create "out" directory
 <pre> 
 TXTDS_OUT = "out/ds.txt"
