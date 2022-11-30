@@ -1,7 +1,6 @@
 <?php 
 
 function getUsList() {
-	// https://dataverse.unimi.it/api/admin/list-users?itemsPerPage=10&key=a97d48bd-3916-45be-8956-d50365c35d84&unblock-key=sUn203s.QX.33
 	$start = $pageCount = 0; 
 	$perPage = PERPAGE; 
 	$u = T_URL.'admin/list-users?itemsPerPage=10000&'.T_APIK.'&'.T_UNBLOCK;
