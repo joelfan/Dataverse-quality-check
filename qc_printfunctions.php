@@ -2,8 +2,15 @@
 
 ///////////////////////// PRINT   FUNCTIONS /////////////////
 function printDs($ds) {
-	// This function prints to files all the characteristics of a dataset, including the score.
-	// First, let's write the plain text file.
+
+/////////////////////////////////////////////////////////////////////////////////////
+// This function prints to files all the characteristics                           //
+// of a dataset, including the score                                               //
+// It write 2 files: 															   //
+// 			a plain text file                                                      //
+// 			a CSV file                                                             //
+/////////////////////////////////////////////////////////////////////////////////////
+	
 	$outTextString = "**********************************************************************************\n";
 	$outTextString .= "DATASET Id=".$ds->id." Name=".$ds->persistentUrl."\n";
 	$outTextString .= "Publisher=".$ds->publisher."\n"; 
