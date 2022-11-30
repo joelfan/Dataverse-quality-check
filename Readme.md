@@ -77,13 +77,13 @@ T_UNBLOCK = "unblock-key=xxxxxxxxxxxxxx";
 </pre>
 
 * Mandatory parameters 
-T_URL = "https://dataverse.xxxxx.com.it/api/"
+<pre>T_URL = "https://dataverse.xxxxx.com.it/api/"</pre>
 Mandatory!! Insert here your dataverse URL 
-T_DVURL = "https://dataverse.xxxxx.com/dataverse/"
+<pre>T_DVURL = "https://dataverse.xxxxx.com/dataverse/"</pre>
 Mandatory!! Insert here your root dataverse
-ROOTDV = "xxxxxxx Dataverse"
+<pre>ROOTDV = "xxxxxxx Dataverse"</pre>
 Mandatory!! Insert here your typical department dataverse name
-DEPTDV = "department of"
+<pre>DEPTDV = "department of"</pre>
 Mandatory!! Insert here your publisher
-ROOTPUBLISHER = "xxxxxxx Dataverse"
+<pre>ROOTPUBLISHER = "xxxxxxx Dataverse"</pre>
 
