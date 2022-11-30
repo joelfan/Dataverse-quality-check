@@ -36,3 +36,54 @@ For each dataset, the program performs:
 
 Each check returns a score (typically from 1 to 5).
 All the score put together will form the average score of the dataset.
+
+### Installation & run
+Nothing special, you just need PHP and php CURL library, which is standard.
+You just need to configure qc.ini, make sure you created a <pre>out</pre> folder, and then you can launch the quality check with the command:
+<pre>php qc.php</pre>
+
+### Configuration of qc.ini
+You just need to set some parameters before running the program. 
+The following applies:
+* Scoring votes:
+The following are the constants for scoring. Votes are 1 to 5, with 5 the best
+<pre>
+SCUMVOTE = 1
+LOWVOTE = 2
+MEDIUMVOTE = 3
+HIGHVOTE = 4
+MEGAVOTE = 5
+</pre>
+
+# output files
+Provide a path and file for each file, or leave them like these but create "out" directory
+<pre> 
+TXTDS_OUT = "out/ds.txt"
+CSVDS_OUT = "out/ds.csv" 
+T_LOG = "out/log.txt"
+</pre> 
+
+* API Key and UNBLOCK Key
+Insert your apikey if you want to scan also draft datasets
+in the form like T_APIK = "key=xxxxxxxxxxxxxxxxxxxxxxxx"
+<pre>
+T_APIK = "key=xxxxxxxxxxxxxxxxxxxxxxxx"
+</pre>
+
+Insert your apikey if you want to scan also draft datasets
+in the form like T_APIK = "key=xxxxxxxxxxxxxxxxxxxxxxxx"
+<pre>
+T_UNBLOCK = "unblock-key=xxxxxxxxxxxxxx";
+</pre>
+
+* Mandatory parameters 
+T_URL = "https://dataverse.xxxxx.com.it/api/"
+Mandatory!! Insert here your dataverse URL 
+T_DVURL = "https://dataverse.xxxxx.com/dataverse/"
+Mandatory!! Insert here your root dataverse
+ROOTDV = "xxxxxxx Dataverse"
+Mandatory!! Insert here your typical department dataverse name
+DEPTDV = "department of"
+Mandatory!! Insert here your publisher
+ROOTPUBLISHER = "xxxxxxx Dataverse"
+
