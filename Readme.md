@@ -10,7 +10,7 @@ The project consists of:
 The project will go through the following milestones:
 - November 2022 - Write a document to define FAIRness and data & metadata quality. In the same doc, state what are project goals and to obtain them.
 - December 2022 - Code a batch program to check for many published dataset attributes and score the attributes
-- January 2022 - Test & produce a list of datasets eligible for improvement
+- January 2023 - Test & produce a list of datasets eligible for improvement
 
 The coding language is PHP, version 7 or superior.
 You can launch the program with a simple "php qc.php".
