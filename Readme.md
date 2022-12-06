@@ -70,8 +70,8 @@ in the form like T_APIK = "key=xxxxxxxxxxxxxxxxxxxxxxxx"
 T_APIK = "key=xxxxxxxxxxxxxxxxxxxxxxxx"
 </pre>
 
-Insert your apikey if you want to scan also draft datasets
-in the form like T_APIK = "key=xxxxxxxxxxxxxxxxxxxxxxxx"
+Insert your UNBLOCK Key  if you want to scan also users
+in the form like T_UNBLOCK = "unblock-key=xxxxxxxxxxxxxxxxxxxxxxxx"
 <pre>
 T_UNBLOCK = "unblock-key=xxxxxxxxxxxxxx";
 </pre>
