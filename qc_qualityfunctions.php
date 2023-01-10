@@ -182,9 +182,15 @@ function checkFile($ds) {
 	$ds->restricted = false; 	
 	$ds->readme = false; 	
 	$ds->score->file = HIGHVOTE;		
-
+	$ds->totalFiles = 0;
+	$ds->fileTypes = [];
+	
 	foreach ($ds->files as $f) {
+		$ds->totalFiles++;
 		$name 				= $f->label;
+		$path_parts = pathinfo($name);
+		$extension = $path_parts['extension'] ?? 'noExtension';
+		(isset($ds->fileTypes[$extension])) ? $ds->fileTypes[$extension]++ : $ds->fileTypes[$extension] = 1;
 		$size				= (($f->dataFile->filesize)/1048576) ?? 0; // MB
 		$ds->totalSize		+= $size;
 		
@@ -205,6 +211,19 @@ function checkFile($ds) {
 	if (!$ds->readme) {
 		$ds->msg .= "Missing Readme file -\n"; 	
 		$ds->score->file = LOWVOTE;
+	}
+
+	// check Extensions      // 
+	$ds->outOfFair = 0; 	
+	// echo "\n\n"; print_r($ds->fileTypes[$extension]); echo "\n\n"; // debug
+	$ds->score->fairTypes = HIGHVOTE;
+	foreach ($ds->fileTypes as $ext => $value) {
+		if (!in_array(strtolower($ext), FAIRTYPES)) {
+			$ds->msg .= $ext." is not FAIR type -\n"; 	
+			$ds->outOfFair += $value; 	
+		}		
+		if (($ds->outOfFair/$ds->totalFiles) > 0.7)
+			$ds->score->fairTypes = LOWVOTE;
 	}
 
 	// check total file size // 

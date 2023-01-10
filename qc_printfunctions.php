@@ -46,12 +46,13 @@ function printDs($ds) {
 	$outTextString .= "Publisher score \t= ".$ds->score->publisher . "\n";	   
 	$outTextString .= "User score \t\t= ".$ds->score->user . "\n";	   
 	$outTextString .= "File score \t\t= ".$ds->score->file . "\n";	   
+	$outTextString .= "File type score \t\t= ".$ds->score->fairTypes . "\n";	   
 	$outTextString .= "**********************************************************************************\n\n";
 	
 	file_put_contents(TXTDS_OUT, $outTextString, FILE_APPEND);
 
 	// Secondly, let's write the CSV file.
-	$avgscore = ($ds->score->posit + $ds->score->metadata + $ds->score->dataAccess + $ds->score->user + $ds->score->publisher + $ds->score->file) / 6;
+	$avgscore = ($ds->score->posit + $ds->score->metadata + $ds->score->dataAccess + $ds->score->user + $ds->score->publisher + $ds->score->file + $ds->score->fairTypes) / 7;
 	$row = 	DLM.SPT.
 		$ds->id.SPT.
 		$ds->persistentUrl.SPT.
@@ -63,6 +64,7 @@ function printDs($ds) {
 		$ds->score->user.SPT.
 		$ds->score->publisher.SPT.		
 		$ds->score->file.SPT.
+		$ds->score->fairTypes.SPT.
 		SPT.
 		$ds->attention.SPT.
 		str_replace("\n", " ", $ds->msg).SPT.
@@ -95,13 +97,14 @@ function scratchFiles() {
 		"Score".SPT.
 		SPT.
 		"Pos score".SPT.
-		"Cit score".SPT.
+		"Met.score".SPT.
 		"Access score".SPT.
 		"User score".SPT.
 		"Pub score".SPT.
 		"File score".SPT.
+		"FileTyp score".SPT.
 		SPT.
-		"!ATTENTION!".SPT.
+		"!ATT!".SPT.
 		"Message".SPT.
 		"Published".SPT.
 		"Pub date".SPT.
